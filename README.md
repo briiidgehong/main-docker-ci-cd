@@ -37,6 +37,13 @@ docker rm <container id / name> (실행중인 컨테이너에는 영향을 미�
 # 모든 이미지 삭제 docker rmi -f $(docker images) (f: force)
 # 모든 컨테이너 삭제 docker rm -f $(docker ps -aq) (f: force)
 
+# 실행중인 컨테이너에 명령어를 전달
+docker exec <container id> <명령어>
+(execute: '조건을 가지고 찾은 파일들을 대상으로 다음 명령어를 실행하라)
+docker exec c85002860025 ls
+docker exec -it <container id>
+??? docker exec attach ???
+
 ```
 3. 개념정리
   - 이미지와 컨테이너
