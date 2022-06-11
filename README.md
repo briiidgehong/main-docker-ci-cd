@@ -17,7 +17,15 @@ docker ps -a -> image / command
 # ps 명령어 formatting
 docker ps --format "table {{.Image}}\t{{.Status}}\t{{.Ports}}"
 
-# 
+# docker run -> docker create + docker start
+docker run hello-world
+docker create hello-world -> a7d8916dd40f23a16e666b121c7b5fec4d0369f1fe4ece3485d027153b3282a5
+docker start -a(attach: output을 현재 터미널에 연결) a7d891'''
+
+# docker stop / docker kill
+docker stop <container id> -> gracefull / grace period / 하던작업을 마무리 하는 시간을 줌
+docker kill <container id> -> 그런거 없이 걍 kill
+
 ```
 3. 개념정리
   - 이미지와 컨테이너
@@ -25,5 +33,5 @@ docker ps --format "table {{.Image}}\t{{.Status}}\t{{.Ports}}"
     - 이미지는 두가지로 구성되어있음
       - 컨테이너가 시작될때 실행될 명령어(run kakaotalk)
       - 실행에 필요한 파일 스냅샷 (카카오톡 파일)
-  -   
-  - 
+  - 도커 컨테이너의 생명주기
+    - 생성(create) -> 시작(start) -> 실행(running) -> 중지(stopped) -> 삭제(deleted)
