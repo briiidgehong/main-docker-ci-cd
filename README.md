@@ -14,6 +14,7 @@ docker run alpine ls
 docker ps -a -> image / command
 (ps: process status) / (a: all)
 
+# 이미지 조회 docker images
 # ps 명령어 formatting
 docker ps --format "table {{.Image}}\t{{.Status}}\t{{.Ports}}"
 
@@ -22,9 +23,19 @@ docker run hello-world
 docker create hello-world -> a7d8916dd40f23a16e666b121c7b5fec4d0369f1fe4ece3485d027153b3282a5
 docker start -a(attach: output을 현재 터미널에 연결) a7d891'''
 
-# docker stop / docker kill
+# 컨테이너 중지: docker stop / docker kill
 docker stop <container id> -> gracefull / grace period / 하던작업을 마무리 하는 시간을 줌
 docker kill <container id> -> 그런거 없이 걍 kill
+
+# 컨테이너 삭제: docker rm
+docker ps -a
+docker rm <container id / name> (실행중인 컨테이너에는 영향을 미치지 않음)
+
+# 이미지 삭제: docker rmi <image id>
+
+# 이미지, 컨테이너, 네트워크 삭제 docker system prune (실행중인 컨테이너에는 영향을 미치지 않음)
+# 모든 이미지 삭제 docker rmi -f $(docker images) (f: force)
+# 모든 컨테이너 삭제 docker rm -f $(docker ps -aq) (f: force)
 
 ```
 3. 개념정리
