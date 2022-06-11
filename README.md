@@ -37,12 +37,24 @@ docker rm <container id / name> (실행중인 컨테이너에는 영향을 미�
 # 모든 이미지 삭제 docker rmi -f $(docker images) (f: force)
 # 모든 컨테이너 삭제 docker rm -f $(docker ps -aq) (f: force)
 
-# 실행중인 컨테이너에 명령어를 전달
+# !!이미 실행중인!! 컨테이너에 명령어를 전달
 docker exec <container id> <명령어>
 (execute: '조건을 가지고 찾은 파일들을 대상으로 다음 명령어를 실행하라)
 docker exec c85002860025 ls
+  - 실습
+  docker run redis
+  docker exec -it <redis container id> redis-cli
+  (it: interactive / terminal) / (it가 없다면 redis-cli를 키기만 하고 밖으로 다시 나와버린다.)
+  cli command: set jyhong 920125 / get jyhong / keys *
+
+# !!이미 실행중인!! 컨테이너의 터미널/쉘에 접속
+docker exec -it <container id> sh / bash / zsh (사용하는 bash image에 따라 다름)
+docker run alpine ping localhost
+docker exec -it 38c8233165b8 sh
+exit: ctrl + D
+  
 docker exec -it <container id>
-??? docker exec attach ???
+??? docker exec
 
 ```
 3. 개념정리
