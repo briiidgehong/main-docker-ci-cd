@@ -68,6 +68,8 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   - dockerfile: docker image를 생성하기 위한 설정 파일 / 컨테이너가 어떻게 행동해야 하는지에 대한 설정
     - 도커이미지를 만들기 위해 필요한것
       - 1) 베이스이미지(file snapshot)
+        - 도커 이미지는 여러개의 레이어로 되어 있다.
+        - 이 레이어들의 기반이 되는 OS라고 생각하면 된다.(window / mac / linux)
       - 2) 추가적으로 필요한 파일을 다운받기 위한 명령어들(file snapshot)
       - 3) 컨테이너 시작시 실행될 명령어
   
