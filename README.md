@@ -86,15 +86,20 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   새로운 이미지를 만든다!
   - 결국 새로운 도커 이미지를 생성한다는 것은 베이스 이미지를 기반으로 붙이고싶은것을 커스텀하게 붙여 새로운 이미지를 만드는 과정
  
- 3. 도커 활용1 - nodejs 서버 구축 ########################################################################
- - node-js app 작성
+3. 도커 활용1 - nodejs 서버 구축 ########################################################################
+- node-js app 작성
    npm init -> entry point: (index.js) server.js
     - package.json(의존성) / server.js(nodejs 시작파일)
 - node-js app 도커환경에서 실행
-  - node-js app을 도커 환경에서 실행하려면 먼저 이미지를 생성하고
-  그 이미지를 run하여 컨테이너를 생성하고
-  그 컨테이너 안에서 node-js 앱을 실행해야 한다.
-  ->>> dockerfile 작성
+  - node-js app을 도커 환경에서 실행하려면 
+  먼저 dockerfile을 작성하여
+  이미지를 생성하고 -> [docker build -t briiidgehong/node-server:version2 ./ ]
+  그 이미지를 run하여 컨테이너를 생성하고 [docker run -p 9999:8080 briiidgehong/node-server:version2]
+  그 컨테이너 안에서 node-js 앱을 실행해야 한다. (server.js)
+  테스트: http://0.0.0.0:9999/
+ 
+  
+ 
 
 ```
 
