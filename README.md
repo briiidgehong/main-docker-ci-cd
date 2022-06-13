@@ -87,7 +87,8 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   - 결국 새로운 도커 이미지를 생성한다는 것은 베이스 이미지를 기반으로 붙이고싶은것을 커스텀하게 붙여 새로운 이미지를 만드는 과정
  
  3. 도커 활용1 - nodejs 서버 구축 ########################################################################
-
+ npm init -> entry point: (index.js) server.js
+  - package.json(의존성) / server.js(nodejs 시작파일)
 
 ```
 
