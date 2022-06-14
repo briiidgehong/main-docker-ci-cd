@@ -97,6 +97,8 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   그 이미지를 run하여 컨테이너를 생성하고 [docker run -p 9999:8080 briiidgehong/node-server:version2]
   그 컨테이너 안에서 node-js 앱을 실행해야 한다. (server.js)
   테스트: http://0.0.0.0:9999/
+  + docker run -it -p 9999:8080 briiidgehong/node-server:version3 sh
+  (워킹 디렉토리 지정시, 해당 워킹디렉토리로 sh 접속된다.)
  
   
  
