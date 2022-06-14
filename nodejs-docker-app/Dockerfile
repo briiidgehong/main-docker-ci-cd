@@ -9,15 +9,20 @@ FROM node:10
 
 WORKDIR /usr/src/app
 
+# 도커 빌드시에 종속성 부분은 캐시 사용 
+# (종속성 변화 없을시에, npm install 반복하지 않기위해 !)
+COPY package.json ./
+
+# package.json -> dependency 의 종속성들을 설치해줌
+# 여기서는 express 설치
+RUN npm install
+
 # 실행에 필요한 파일들을 docker container 안에 copy
 # COPY <현재디렉토리> <컨테이너 내의 디렉토리>
 # COPY package.json ./
 # COPY server.js ./
 COPY ./ ./
 
-# package.json -> dependency 의 종속성들을 설치해줌
-# 여기서는 express 설치
-RUN npm install
 
 # node 서버 시작
 CMD ["node", "server.js"]
