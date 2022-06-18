@@ -98,7 +98,7 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   + 베이스 이미지의 파일과의 구분을 위해 따로 워킹디렉토리를 지정해서 소스파일을 복사한다.
   docker run -it -p 9999:8080 briiidgehong/node-server:version3 sh
   (워킹 디렉토리 지정시, 해당 워킹디렉토리로 sh 접속된다.)
-  + 변경사항 반영을 위해 재빌드를 해야하는 문제를 해결하기 위해 도커 볼륨을 사용
+  + 볼륨(volume)을 쓰는 이유: !!! 변경사항 반영을 위해 재빌드를 하지 않아도 된다. !!!
     - 로컬디렉토리와 컨테이너 안의 디렉토리를 맵핑시켜놓는다. -> 도커stop후 다시 run 해야 반영됨
   docker run -p 9999:8080 -v /usr/src/app/node_modules -v $(pwd):/usr/src/app <이미지 아이디>
   (로컬에는 node_modules이 없으므로 그냥 컨테이너 안의 파일을 사용 = 맵핑에서 제외)
