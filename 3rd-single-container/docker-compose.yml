@@ -1,0 +1,11 @@
+version: "3"
+services:
+  react:
+    build:
+      context: . # 도커 이미지를 궝하기 위한 파일과 폴더의 경로
+      dockerfile: Dockerfile.dev # -find
+    ports:
+      - "9999:3000"
+    volumes:
+      - /usr/src/app/node_modules
+      - ./:/usr/src/app
