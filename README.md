@@ -121,7 +121,11 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
 - 리액트 설치: npx create-react-app ./ 
   - 리액트 실행: npm run start / 테스트: npm run test / 배포를 위한 빌드: npm run build 
 - Dockerfile.dev 작성
-  - docker build -f Dockerfile.dev ./ (--find)
+  - 이미지 생성: docker build -t 3rd-single-node-app:version1 -f Dockerfile.dev ./ (--find)
+  - 이미지로 컨테이너 만들어서 실행
+    -> docker images 
+    -> docker run -p 9999:3000(react default running port) 3rd-single-node-app:version1
+
 4TH multiple-container ###################################################################
  
 
