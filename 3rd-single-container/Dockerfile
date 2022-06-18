@@ -1,0 +1,2 @@
+# for PROD
+FROM baseImage
