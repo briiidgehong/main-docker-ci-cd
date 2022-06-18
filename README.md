@@ -130,6 +130,7 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
     - docker run -p 9999:3000 
     -v /usr/src/app/node_modules (로컬에는 없는대, 서버에는 있으므로 이 부분은 매핑하지 않는다.)
     -v $(pwd):/usr/src/app 3rd-single-node-app:version1
+  - docker-compose 적용
 
 4TH multiple-container ###################################################################
  
