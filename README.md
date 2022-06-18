@@ -99,7 +99,7 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   docker run -it -p 9999:8080 briiidgehong/node-server:version3 sh
   (워킹 디렉토리 지정시, 해당 워킹디렉토리로 sh 접속된다.)
   + 볼륨(volume)을 쓰는 이유: !!! 변경사항 반영을 위해 재빌드를 하지 않아도 된다. !!!
-    - 로컬디렉토리와 컨테이너 안의 디렉토리를 맵핑시켜놓는다. -> 도커stop후 다시 run 해야 반영됨
+    - 로컬디렉토리와 컨테이너 안의 디렉토리를 맵핑시켜놓는다.
     - copy vs volume 의 차이
   docker run -p 9999:8080 -v /usr/src/app/node_modules -v $(pwd):/usr/src/app <이미지 아이디>
   (로컬에는 node_modules이 없으므로 그냥 컨테이너 안의 파일을 사용 = 맵핑에서 제외)
@@ -126,7 +126,7 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   - 이미지로 컨테이너 만들어서 실행
     -> docker images 
     -> docker run -p 9999:3000(react default running port) 3rd-single-node-app:version1
-  - 컨테이너 실행시, volume 지정해서 실행
+  - 컨테이너 실행시, volume 지정해서 실행 -> 실시간으로 로컬코드 컨테이너에 반영
     - docker run -p 9999:3000 
     -v /usr/src/app/node_modules (로컬에는 없는대, 서버에는 있으므로 이 부분은 매핑하지 않는다.)
     -v $(pwd):/usr/src/app 3rd-single-node-app:version1
