@@ -130,8 +130,14 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
     - docker run -p 9999:3000 
     -v /usr/src/app/node_modules (로컬에는 없는대, 서버에는 있으므로 이 부분은 매핑하지 않는다.)
     -v $(pwd):/usr/src/app 3rd-single-node-app:version1
-  - docker-compose 적용
-
+- docker-compose 적용
+- npm 테스트: docker run -it 3rd-single-node-app:version1 npm run test 
+- Dockerfile(prod) 작성
+  - 개발환경과는 달리 build된 정적파일을 이용한다.
+  - builder stage와 nginx serving stage 두개로 나누어진다.
+  - docker build -t 3rd-prod-env ./
+  - docker run -p 9999:80(nginx default port) 3rd-prod-env
+  
 4TH multiple-container ###################################################################
  
 
