@@ -118,6 +118,10 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
 
 
 3RD single-container #####################################################################
+- 리액트 설치: npx create-react-app ./ 
+  - 리액트 실행: npm run start / 테스트: npm run test / 배포를 위한 빌드: npm run build 
+- Dockerfile.dev 작성
+  - docker build -f Dockerfile.dev ./ (--find)
 4TH multiple-container ###################################################################
  
 
