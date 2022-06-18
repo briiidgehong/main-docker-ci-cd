@@ -103,6 +103,19 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   (로컬에는 node_modules이 없으므로 그냥 컨테이너 안의 파일을 사용 = 맵핑에서 제외)
   
 2ND docker-compose ########################################################################
+- redis container 하나, node container 하나가 따로 필요함
+  - node 쪽에서 redis 서버쪽으로 접근(node쪽에도 client를 만들수 있는 redis 패키지 종속성 추가)
+- npm init 으로 package.json file 생성
+  - start script에 "node server.js" 작성
+  - dependency 추가
+- docker compose 를 쓰는 이유중 가장 큰이유
+  - 포트라던지 volume같은 설정의 편리함도 물론 있지만
+  - !!!컨테이너간 네트워크를 간편하게 묶어주는 역할을 한다.!!!
+  - docker compose로 묶이지 않는 각각의 컨테이너 간의 통산은 따로 네트워크 설정이 필요하다.
+  - docker compose는 두개의 컨테이너를 하나의 service로 묶어주는 역할을 한다.
+- docker-compose up / docker-compose up --build / docker-compose down
+
+
 3RD single-container #####################################################################
 4TH multiple-container ###################################################################
  
