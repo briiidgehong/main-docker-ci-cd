@@ -1,4 +1,4 @@
-# for prod
+# for prod env
 
 # 1. 빌드 파일 생성 - builder stage
 # as builder from부터 ~ 다음 from 까지는 builder stage
