@@ -1,0 +1,22 @@
+# sudo 관리자 권한
+sudo: required
+
+# 언어(플랫폼)를 선택
+language: generic
+
+# 도커 환경 구성
+services:
+  - docker
+
+# 스크립트 실행전 - 이미지 생성
+before_install:
+  - echo "start creating an image with dockerfile"
+  - docker build -t 3rd-app-test -f Dockerfile.dev ./
+
+# 실행할 스크립트(=테스트)
+script:
+  -docker run -e CI=true 3rd-app-test npm run test -- --coverage
+
+# 테스트 성공후 할일
+after_success:
+  - echo "test success"
