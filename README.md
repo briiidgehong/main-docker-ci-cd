@@ -145,7 +145,7 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
     - 프로젝트 루트경로에 .travis.yml 작성 (before_install -> script -> after_success)
     - dashboard 에서 github hook에 대한 build status 및 logging 확인 가능
   - test 잘 진행되었다면, after_success에 배포 script 작성 (aws cloud) 
-    
+    - elastic beanstalk 환경구성
   
   
 4TH multiple-container ###################################################################
