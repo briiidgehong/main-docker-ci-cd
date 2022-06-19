@@ -137,6 +137,13 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
   - builder stage와 nginx serving stage 두개로 나누어진다.
   - docker build -t 3rd-prod-env ./
   - docker run -p 9999:80(nginx default port) 3rd-prod-env
+- travis CI
+  - CI(continuous Integration) 서비스로, github repository의 프로젝트를 특정 이벤트에 따라
+  자동으로 테스트, 빌드, 배포 할수있다.
+  - https://app.travis-ci.com/ 
+    - account - setting 에서, 프로젝트 repository 연동
+    - dashboard
+  
   
 4TH multiple-container ###################################################################
  
