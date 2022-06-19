@@ -16,7 +16,7 @@ before_install:
 
 # 실행할 스크립트(=테스트)
 script:
-  -docker run -e CI=true 3rd-app-test npm run test -- --coverage
+  - docker run -e CI=true 3rd-app-test npm run test -- --coverage
 
 # 테스트 성공후 할일
 after_success:
