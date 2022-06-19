@@ -11,7 +11,7 @@ services:
 # 스크립트 실행전 (=이미지 생성)
 before_install:
   - echo "start creating an image with dockerfile"
-  - docker build -t 3rd-app-test -f Dockerfile.dev ./
+  - docker build -t 3rd-app-test -f Dockerfile.dev ~/3rd-single-container/.
 
 # 실행할 스크립트(=테스트)
 script:
