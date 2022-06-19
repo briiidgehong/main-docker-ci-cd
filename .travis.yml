@@ -21,3 +21,25 @@ script:
 # 테스트 성공후 할일
 after_success:
   - echo "test success!"
+
+# EB 배포
+# 도커 이미지를 Travis CI에서 생성 
+# ====>  도커 허브 저장 
+# ====> 도커 이미지를 AWS EB에서 받아서 이미지로 컨테이너 생성
+# ====> 컨테이너 안에서 앱 실행 입니다 !!
+
+deploy:
+  # http://beanstalktestapp-env.eba-zu4jkbwe.ap-northeast-2.elasticbeanstalk.com/
+  # 외부 서비스 표시( s3 / elasticbeanstalk / firebase ''')
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "beanstalk-test-app"
+  env: "Beanstalktestapp-env"
+
+  # travis ci에서 가지고 있는 파일을 압축해서 s3로 보낸다.
+  # elasticbeanstalk 생성시에, s3 bucket 이 자동 생성된다.
+  bucket_name: "travisci-aceess-test"
+  bucket_path: "beanstalk-test-app"
+  on:
+    # 어떤 브랜치에 push를 할때 AWS에 배포를 할것인지.
+    branch: master
