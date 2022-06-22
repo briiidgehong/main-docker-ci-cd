@@ -33,13 +33,13 @@ deploy:
   # 외부 서비스 표시( s3 / elasticbeanstalk / firebase ''')
   provider: elasticbeanstalk
   region: "ap-northeast-2"
-  app: "beanstalk-test-app"
-  env: "Beanstalktestapp-env"
+  app: "docker-react-app"
+  env: "Dockerreactapp-env"
 
   # travis ci에서 가지고 있는 파일을 압축해서 s3로 보낸다.
   # elasticbeanstalk 생성시에, s3 bucket 이 자동 생성된다.
-  bucket_name: "travisci-aceess-test"
-  bucket_path: "beanstalk-test-app"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-538201560165"
+  bucket_path: "docker-react-app"
   on:
     # 어떤 브랜치에 push를 할때 AWS에 배포를 할것인지.
     branch: master
