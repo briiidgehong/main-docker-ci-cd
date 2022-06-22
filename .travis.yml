@@ -45,5 +45,5 @@ deploy:
     branch: master
 
   # travis.com -> 해당 프로젝트 -> setting 에 환경변수 설정
-  access_key_id: $aws-access-key
-  secret_access_key_id: $aws-secret-access-key
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key_id: $AWS_SECRET_KEY
