@@ -148,7 +148,9 @@ dockerfile 작성 -> docker client -> docker server -> 이미지 생성
     - elastic beanstalk 환경구성 
     - iam 사용자 추가 및 권한 부여 / iam access key travis-ci 환경변수에 작성
     - beanstalk target으로, 배포 script 작성
-  
+    - github push -> travis-ci -> beanstalk 배포순으로 이루어진다. 
+    - beanstalk endpoint에서 배포된 프로젝트 확인 가능
+      (Dockerreactapp-env.eba-ip3vhpa2.ap-northeast-2.elasticbeanstalk.com )
   
 4TH multiple-container ###################################################################
  
