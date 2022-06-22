@@ -43,3 +43,7 @@ deploy:
   on:
     # 어떤 브랜치에 push를 할때 AWS에 배포를 할것인지.
     branch: master
+
+# travis.com -> 해당 프로젝트 -> setting 에 환경변수 설정
+access_key_id: $aws-access-key
+secret_access_key_id: $aws-secret-access-key
